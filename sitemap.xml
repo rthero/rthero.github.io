@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://rthero.club/tags/index.html</loc>
+    
+    <lastmod>2019-04-20T14:47:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://rthero.club/hello-world.html</loc>
     
     <lastmod>2019-04-20T13:29:19.000Z</lastmod>
