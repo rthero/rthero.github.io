@@ -366,42 +366,18 @@
 
       
         
-          
-            <h1 id="这是对于二叉树结构的一些基本总结，使用Java语言描述"><a href="#这是对于二叉树结构的一些基本总结，使用Java语言描述" class="headerlink" title="这是对于二叉树结构的一些基本总结，使用Java语言描述"></a>这是对于二叉树结构的一些基本总结，使用Java语言描述</h1><ul>
+          <h1 id="这是对于二叉树结构的一些基本总结，使用Java语言描述"><a href="#这是对于二叉树结构的一些基本总结，使用Java语言描述" class="headerlink" title="这是对于二叉树结构的一些基本总结，使用Java语言描述"></a>这是对于二叉树结构的一些基本总结，使用Java语言描述</h1><ul>
 <li>二叉树有独特的性质，不包括特殊二叉树，需要熟悉</li>
 <li>一般来说二叉树的题用递归方法做最为直观</li>
 <li>一些题也可以借助队列来做</li>
 </ul>
-<h1 id="二叉树的结构"><a href="#二叉树的结构" class="headerlink" title="二叉树的结构"></a>二叉树的结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class TreeNode()&#123;</span><br><span class="line">    int val;</span><br><span class="line">    //左子树</span><br><span class="line">    TreeNode left;</span><br><span class="line">    //右子树</span><br><span class="line">    TreeNode right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="求二叉树的最大深度"><a href="#求二叉树的最大深度" class="headerlink" title="求二叉树的最大深度"></a>求二叉树的最大深度</h1><ul>
-<li>二叉树的最大深度就是根节点到最远子节点的距离</li>
-<li>对于任意一个节点，它的深度就是它左右两个子节点的深度+1<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;//解法：该方法使用递归的方法</span><br><span class="line">    public int maxDepth(TreeNode root) &#123;</span><br><span class="line">        if(root == null)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">    return Math.max(maxDepth(root.left), maxDepth(root.right))+1;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="求二叉树中节点的个数"><a href="#求二叉树中节点的个数" class="headerlink" title="求二叉树中节点的个数"></a>求二叉树中节点的个数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public:</span><br><span class="line">        int countNodes(TreeNode* root) &#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">            return 0;</span><br><span class="line"></span><br><span class="line">            return countNodes(root.left) + countNodes(root.right) + 1;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="求二叉树中叶子节点的个数"><a href="#求二叉树中叶子节点的个数" class="headerlink" title="求二叉树中叶子节点的个数"></a>求二叉树中叶子节点的个数</h1><ul>
-<li>没有子节点的节点称为叶子节点</li>
-<li>本题依旧可以用递归调用的方法来做<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public:</span><br><span class="line">       int numOfLeafNode(TreeNode root)&#123;</span><br><span class="line">           if(root == null)</span><br><span class="line">           return 0;</span><br><span class="line">           else if(root.left == null &amp;&amp; root.right == null)</span><br><span class="line">           return 1;</span><br><span class="line">           else if(root.left != null || root.right != null)//其实这一步不需要判断条件</span><br><span class="line">           return numOfLeafNode(root.left) + numOfLeafNode(root.right);</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="求二叉树中第K层节点的个数"><a href="#求二叉树中第K层节点的个数" class="headerlink" title="求二叉树中第K层节点的个数"></a>求二叉树中第K层节点的个数</h1><ol>
-<li>利用递归方法</li>
-</ol>
-<ul>
-<li>若根节点为空，或者层数K &lt;= 0 ，则为空树或者不符合要求，返回0</li>
-<li>若根节点不为空且此时层数K = 0 ，则此时的根节点就是K层节点，返回1</li>
-<li>若根节点不为空且此时层数K &gt; 0 , 则返回此时根节点的左子树（K-1）层节点数与右子树（K-1）层节点数之和<br>代码如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int getBTreeKthLeverNOdesTotal(TreeNode root,int k)&#123;</span><br><span class="line">    if(root == null || k &lt;= 0)&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(root != null &amp;&amp; k == 0)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return getBTreeKthLeverNOdesTotal(root.left, k-1) + getBTreeKthLeverNOdesTotal(root.right, k-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="2">
-<li>利用队列实现</li>
-</ol>
-<ul>
-<li>难点在于如何在队列中使用标志来对二叉树分层</li>
-<li>解法：int curcount，用来记录当前层的节点个数，由于只有一个根节点，初值赋为零。int nextcount，用来记录下一层的节点个数，初值置0.</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/数据结构中有关二叉树问题的总结.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
