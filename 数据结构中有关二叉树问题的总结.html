@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="人天的技术博客">
 <meta property="og:description" content="这是对于二叉树结构的一些基本总结，使用Java语言描述 二叉树有独特的性质，不包括特殊二叉树，需要熟悉 一般来说二叉树的题用递归方法做最为直观 一些题也可以借助队列来做">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T00:54:44.000Z">
+<meta property="og:updated_time" content="2019-04-21T07:26:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构中有关二叉树问题的总结">
 <meta name="twitter:description" content="这是对于二叉树结构的一些基本总结，使用Java语言描述 二叉树有独特的性质，不包括特殊二叉树，需要熟悉 一般来说二叉树的题用递归方法做最为直观 一些题也可以借助队列来做">
@@ -408,6 +408,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -451,13 +482,6 @@
 <li>若根节点不为空且此时层数K &gt; 0 , 则返回此时根节点的左子树（K-1）层节点数与右子树（K-1）层节点数之和<br>代码如下：<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getBTreeKthLeverNOdesTotal</span><span class="params">(TreeNode root,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span> || k &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">else</span> <span class="title">if</span><span class="params">(root != <span class="keyword">null</span> &amp;&amp; k == <span class="number">0</span>)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> getBTreeKthLeverNOdesTotal(root.left, k<span class="number">-1</span>) + getBTreeKthLeverNOdesTotal(root.right, k<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol start="2">
-<li>利用队列实现</li>
-</ol>
-<ul>
-<li>难点在于如何在队列中使用标志来对二叉树分层</li>
-<li>解法：int curcount，用来记录当前层的节点个数，由于只有一个根节点，初值赋为零。int nextcount，用来记录下一层的节点个数，初值置0.</li>
-</ul>
 
       
     </div>
@@ -478,7 +502,7 @@
   <p><span>本文标题:</span><a href="/数据结构中有关二叉树问题的总结.html">数据结构中有关二叉树问题的总结</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Rentian He 的个人博客">Rentian He</a></p>
   <p><span>发布时间:</span>2019年04月20日 - 23:04</p>
-  <p><span>最后更新:</span>2019年04月21日 - 08:04</p>
+  <p><span>最后更新:</span>2019年04月21日 - 15:04</p>
   <p><span>原始链接:</span><a href="/数据结构中有关二叉树问题的总结.html" title="数据结构中有关二叉树问题的总结">http://rthero.club/数据结构中有关二叉树问题的总结.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rthero.club/数据结构中有关二叉树问题的总结.html" aria-label="复制成功！"></i></span>
   </p>
