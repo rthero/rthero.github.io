@@ -94,6 +94,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="人天的技术博客" type="application/atom+xml">
+
 
 
 
@@ -113,14 +115,17 @@
 
 
 
+<meta name="description" content="分享带来进步">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
 <meta property="og:url" content="http://rthero.club/about/index.html">
 <meta property="og:site_name" content="人天的技术博客">
+<meta property="og:description" content="分享带来进步">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-21T03:18:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="about">
+<meta name="twitter:description" content="分享带来进步">
 
 
 
@@ -356,7 +361,6 @@
   
 
 
-
         </div>
         
           
@@ -424,6 +428,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -639,7 +650,7 @@
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
+    var guest = 'mail';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
@@ -649,10 +660,10 @@
         notify: false,
         appId: 'OdtvhxBiOyh2kEkOpb9AGeQU-gzGzoHsz',
         appKey: 'vVRmYxraBUkzU1VP62HHlISW',
-        placeholder: 'Just go go',
+        placeholder: '添加邮件地址可以收到我的回复哟',
         avatar:'mm',
         guest_info:guest,
-        pageSize:'10' || 10,
+        pageSize:'5' || 10,
     });
   </script>
 
