@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="java语法探析 java 语法探析,">
+  <meta name="keywords" content="java语法探析,java,语法探析,">
 
 
 
@@ -113,18 +113,18 @@
 
 
 
-<meta name="description" content="先介绍一些static关键字的概念，注意加粗部分  在类中，用static声明的成员变量为静态成员变量，它为该类的公用变量，在第一次使用时被初始化，对于该类来说，static成员变量只有一份 用static声明的方法为静态方法，在调用该方法时，不会将对象的引用传递给它，所以在static方法中不可访问非static的成员静态方法不再是针对于某个对象调用，所以不能访问非静态成员 可以通过对象引用或类">
-<meta name="keywords" content="java语法探析 java 语法探析">
+<meta name="description" content="对于java中的tatic关键字，最重要的是理解static修饰的静态变量存放在数据区，static修饰的静态方法与普通的方法不同的是静态方法不需要实例化就可以访问。">
+<meta name="keywords" content="java语法探析,java,语法探析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一文看懂java中static关键字">
 <meta property="og:url" content="http://rthero.club/一文看懂java中static关键字.html">
 <meta property="og:site_name" content="人天的技术博客">
-<meta property="og:description" content="先介绍一些static关键字的概念，注意加粗部分  在类中，用static声明的成员变量为静态成员变量，它为该类的公用变量，在第一次使用时被初始化，对于该类来说，static成员变量只有一份 用static声明的方法为静态方法，在调用该方法时，不会将对象的引用传递给它，所以在static方法中不可访问非static的成员静态方法不再是针对于某个对象调用，所以不能访问非静态成员 可以通过对象引用或类">
+<meta property="og:description" content="对于java中的tatic关键字，最重要的是理解static修饰的静态变量存放在数据区，static修饰的静态方法与普通的方法不同的是静态方法不需要实例化就可以访问。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-28T11:27:18.000Z">
+<meta property="og:updated_time" content="2019-04-28T14:49:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一文看懂java中static关键字">
-<meta name="twitter:description" content="先介绍一些static关键字的概念，注意加粗部分  在类中，用static声明的成员变量为静态成员变量，它为该类的公用变量，在第一次使用时被初始化，对于该类来说，static成员变量只有一份 用static声明的方法为静态方法，在调用该方法时，不会将对象的引用传递给它，所以在static方法中不可访问非static的成员静态方法不再是针对于某个对象调用，所以不能访问非静态成员 可以通过对象引用或类">
+<meta name="twitter:description" content="对于java中的tatic关键字，最重要的是理解static修饰的静态变量存放在数据区，static修饰的静态方法与普通的方法不同的是静态方法不需要实例化就可以访问。">
 
 
 
@@ -382,8 +382,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/java语法探析/" itemprop="url" rel="index">
+                    <span itemprop="name">java语法探析</span>
                   </a>
                 </span>
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  372 字
+                  435 字
                 </span>
               
 
@@ -452,7 +452,7 @@
       
 
       
-        <p>先介绍一些static关键字的概念，注意加粗部分</p>
+        <p>对于java中的tatic关键字，最重要的是理解static修饰的静态变量存放在数据区，static修饰的静态方法与普通的方法不同的是静态方法不需要实例化就可以访问。<br><a id="more"></a><br>先介绍一些static关键字的概念，注意加粗部分</p>
 <ul>
 <li>在类中，用static声明的成员变量为静态成员变量，它为该类的<strong>公用变量</strong>，在第一次使用时被初始化，对于该类来说，<strong>static成员变量只有一份</strong></li>
 <li>用static声明的方法为静态方法，在调用该方法时，不会将对象的引用传递给它，所以在static方法中不可访问非static的成员<br>静态方法不再是针对于某个对象调用，所以不能访问非静态成员</li>
@@ -463,7 +463,7 @@
 <p><strong>注意</strong> </p>
 <ul>
 <li>静态变量在内存中的位置是数据区</li>
-<li>可以这样理解：静态变量是属于整个类的而不是该类的某个对象的，即使不new一个对象，在数据区人会有静态变量的内存</li>
+<li>可以这样理解：静态变量是属于整个类的而不是该类的某个对象的，即使不new一个对象，在数据区仍然会有静态变量的内存</li>
 <li>静态变量无论是通过 类名.静态变量 还是通过 对象名.静态变量 使用访问的都是同一块内存</li>
 </ul>
 <p>可以借助上面的程序仔细理解</p>
@@ -487,7 +487,7 @@
   <p><span>本文标题:</span><a href="/一文看懂java中static关键字.html">一文看懂java中static关键字</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Rentian He 的个人博客">Rentian He</a></p>
   <p><span>发布时间:</span>2019年04月28日 - 13:04</p>
-  <p><span>最后更新:</span>2019年04月28日 - 19:04</p>
+  <p><span>最后更新:</span>2019年04月28日 - 22:04</p>
   <p><span>原始链接:</span><a href="/一文看懂java中static关键字.html" title="一文看懂java中static关键字">http://rthero.club/一文看懂java中static关键字.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rthero.club/一文看懂java中static关键字.html" aria-label="复制成功！"></i></span>
   </p>
@@ -522,7 +522,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java语法探析-java-语法探析/" rel="tag"><i class="fa fa-tag"></i> java语法探析 java 语法探析</a>
+            <a href="/tags/java语法探析/" rel="tag"><i class="fa fa-tag"></i> java语法探析</a>
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/语法探析/" rel="tag"><i class="fa fa-tag"></i> 语法探析</a>
           
         </div>
       
@@ -544,6 +548,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/看懂java中的继承.html" rel="prev" title="看懂java中的继承">
+                看懂java中的继承 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -615,7 +623,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -637,7 +645,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
