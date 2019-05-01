@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="java语法探析,java,">
+  <meta name="keywords" content="java语法探析,java,语法探析,">
 
 
 
@@ -113,18 +113,20 @@
 
 
 
-<meta name="description" content="对象转型 一个基类的引用类型变量可以“指向”其子类的对象。 一个基类的引用不可以访问其子类对象新增加的成员（属性和方法）。 可以使用（引用变量）instanceof（类名） 来判断该引用类型变量所“指向”的对象是否属于该类或该类的子类。 子类的对象可以当作基类的对象来使用，称作向上转型（upcasting），反之则称为向下转型（downcasting）">
-<meta name="keywords" content="java语法探析,java">
+<meta name="description" content="对于java中的tatic关键字，最重要的是理解static修饰的静态变量存放在数据区，static修饰的静态方法与普通的方法不同的是静态方法不需要实例化就可以访问。">
+<meta name="keywords" content="java语法探析,java,语法探析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="看懂java中的对象转型">
-<meta property="og:url" content="http://rthero.club/看懂java中的对象转型.html">
+<meta property="og:title" content="一文看懂java中static关键字">
+<meta property="og:url" content="http://rthero.club/一文看懂java中static关键字/一文看懂java中static关键字.html">
 <meta property="og:site_name" content="人天的技术博客">
-<meta property="og:description" content="对象转型 一个基类的引用类型变量可以“指向”其子类的对象。 一个基类的引用不可以访问其子类对象新增加的成员（属性和方法）。 可以使用（引用变量）instanceof（类名） 来判断该引用类型变量所“指向”的对象是否属于该类或该类的子类。 子类的对象可以当作基类的对象来使用，称作向上转型（upcasting），反之则称为向下转型（downcasting）">
+<meta property="og:description" content="对于java中的tatic关键字，最重要的是理解static修饰的静态变量存放在数据区，static修饰的静态方法与普通的方法不同的是静态方法不需要实例化就可以访问。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-28T15:06:35.000Z">
+<meta property="og:image" content="http://rthero.club/一文看懂java中static关键字/image.jpg">
+<meta property="og:updated_time" content="2019-05-01T13:25:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="看懂java中的对象转型">
-<meta name="twitter:description" content="对象转型 一个基类的引用类型变量可以“指向”其子类的对象。 一个基类的引用不可以访问其子类对象新增加的成员（属性和方法）。 可以使用（引用变量）instanceof（类名） 来判断该引用类型变量所“指向”的对象是否属于该类或该类的子类。 子类的对象可以当作基类的对象来使用，称作向上转型（upcasting），反之则称为向下转型（downcasting）">
+<meta name="twitter:title" content="一文看懂java中static关键字">
+<meta name="twitter:description" content="对于java中的tatic关键字，最重要的是理解static修饰的静态变量存放在数据区，static修饰的静态方法与普通的方法不同的是静态方法不需要实例化就可以访问。">
+<meta name="twitter:image" content="http://rthero.club/一文看懂java中static关键字/image.jpg">
 
 
 
@@ -154,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://rthero.club/看懂java中的对象转型.html">
+  <link rel="canonical" href="http://rthero.club/一文看懂java中static关键字/一文看懂java中static关键字.html">
 
 
 
 
 
-  <title>看懂java中的对象转型 | 人天的技术博客</title>
+  <title>一文看懂java中static关键字 | 人天的技术博客</title>
   
 
 
@@ -330,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://rthero.club/看懂java中的对象转型.html">
+    <link itemprop="mainEntityOfPage" href="http://rthero.club/一文看懂java中static关键字/一文看懂java中static关键字.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rentian He">
@@ -347,7 +349,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">看懂java中的对象转型</h2>
+          <h2 class="post-title" itemprop="name headline">一文看懂java中static关键字</h2>
         
 
         <div class="post-meta">
@@ -359,7 +361,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T22:27:18+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T13:17:23+08:00">
                 2019-04-28
               </time>
             
@@ -415,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  126 字
+                  571 字
                 </span>
               
 
@@ -431,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -452,11 +454,20 @@
       
 
       
-        <h1 id="对象转型"><a href="#对象转型" class="headerlink" title="对象转型"></a>对象转型</h1><ul>
-<li>一个基类的引用类型变量可以“指向”其子类的对象。</li>
-<li>一个基类的引用不可以访问其子类对象新增加的成员（属性和方法）。</li>
-<li>可以使用（引用变量）instanceof（类名） 来判断该引用类型变量所“指向”的对象是否属于该类或该类的子类。</li>
-<li>子类的对象可以当作基类的对象来使用，称作向上转型（upcasting），反之则称为向下转型（downcasting）</li>
+        <p>对于java中的tatic关键字，最重要的是理解static修饰的静态变量存放在数据区，static修饰的静态方法与普通的方法不同的是静态方法不需要实例化就可以访问。<br><a id="more"></a><br>先介绍一些static关键字的概念，注意加粗部分</p>
+<ul>
+<li>在类中，用static声明的成员变量为静态成员变量，它为该类的<strong>公用变量</strong>，在第一次使用时被初始化，对于该类来说，<strong>static成员变量只有一份</strong></li>
+<li>用static声明的方法为静态方法，在调用该方法时，不会将对象的引用传递给它，所以在static方法中不可访问非static的成员<br>静态方法不再是针对于某个对象调用，所以不能访问非静态成员</li>
+<li>可以通过对象引用或类名（不需要实例化）访问静态成员</li>
+</ul>
+<p>下面来看代码：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Car</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span>  <span class="keyword">int</span> sid = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    Car(String name)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        id = sid ++; <span class="comment">//先将sid的值传给id，再sid+1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">info</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"My name is "</span> + name + <span class="string">" No. "</span> + id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span>&#123;</span><br><span class="line">        Car.sid = <span class="number">1</span>;   <span class="comment">//没有new对象，静态变量直接调用</span></span><br><span class="line">        Car tayota = <span class="keyword">new</span> Car(<span class="string">"toyota"</span>);</span><br><span class="line">        Car bmw = <span class="keyword">new</span> Car(<span class="string">"bwm"</span>);</span><br><span class="line">        tayota.info();</span><br><span class="line">        bmw.info();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上段代码执行过程中内存布局是：<br><img src="image.jpg" alt></p>
+<p>可以看出，sid作为静态变量是存在data seg区的，是不属于两次new出来的对象的。<br>运行结果为：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">My <span class="built_in">name</span> <span class="keyword">is</span> toyota No. <span class="number">1</span></span><br><span class="line">My <span class="built_in">name</span> <span class="keyword">is</span> bwm No. <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<p>可以借助上面的程序仔细理解。当第一次new toyota对象时，sid先将值传给toyota.id，值为1，随后sid = sid+1。当第二次new bmw对象的时候，对于sid来说，<strong>访问的仍然是原来的内存</strong>，此时内存中sid的值为2，故而传给bmw.id的值为2。<br><strong>注意</strong> </p>
+<ul>
+<li>静态变量在内存中的位置是数据区</li>
+<li>可以这样理解：静态变量是属于整个类的而不是该类的某个对象的，即使不new一个对象，在数据区仍然会有静态变量的内存</li>
+<li>静态变量无论是通过 类名.静态变量 还是通过 对象名.静态变量 使用访问的都是同一块内存</li>
 </ul>
 
       
@@ -475,12 +486,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/看懂java中的对象转型.html">看懂java中的对象转型</a></p>
+  <p><span>本文标题:</span><a href="/一文看懂java中static关键字/一文看懂java中static关键字.html">一文看懂java中static关键字</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Rentian He 的个人博客">Rentian He</a></p>
-  <p><span>发布时间:</span>2019年04月28日 - 22:04</p>
-  <p><span>最后更新:</span>2019年04月28日 - 23:04</p>
-  <p><span>原始链接:</span><a href="/看懂java中的对象转型.html" title="看懂java中的对象转型">http://rthero.club/看懂java中的对象转型.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rthero.club/看懂java中的对象转型.html" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年04月28日 - 13:04</p>
+  <p><span>最后更新:</span>2019年05月01日 - 21:05</p>
+  <p><span>原始链接:</span><a href="/一文看懂java中static关键字/一文看懂java中static关键字.html" title="一文看懂java中static关键字">http://rthero.club/一文看懂java中static关键字/一文看懂java中static关键字.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rthero.club/一文看懂java中static关键字/一文看懂java中static关键字.html" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -517,6 +528,8 @@
           
             <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
+            <a href="/tags/语法探析/" rel="tag"><i class="fa fa-tag"></i> 语法探析</a>
+          
         </div>
       
 
@@ -528,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/一文看懂java中static关键字.html" rel="next" title="一文看懂java中static关键字">
-                <i class="fa fa-chevron-left"></i> 一文看懂java中static关键字
+              <a href="/数据结构中有关二叉树问题的总结.html" rel="next" title="数据结构中有关二叉树问题的总结">
+                <i class="fa fa-chevron-left"></i> 数据结构中有关二叉树问题的总结
               </a>
             
           </div>
@@ -538,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/从内存角度深入理解java中的多态.html" rel="prev" title="从内存角度深入理解java中的多态">
-                从内存角度深入理解java中的多态 <i class="fa fa-chevron-right"></i>
+              <a href="/java学习笔记.html" rel="prev" title="java学习笔记">
+                java学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -594,17 +607,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -621,7 +625,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -643,7 +647,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -688,22 +692,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对象转型"><span class="nav-number">1.</span> <span class="nav-text">对象转型</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
