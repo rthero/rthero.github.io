@@ -113,17 +113,21 @@
 
 
 
-<meta name="description" content="分享带来进步">
+<meta name="description" content="综述 排序是将一组对象按照某种逻辑顺序重新排列的过程 排序算法的分类可以分为两类：一类是比较排序，包含冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等；一类是非比较排序，包含计数排序，基数排序，桶排序等。比较排序是指，排序元素之间的位置依赖于它们之间的比较，每个元素必须都与其他的元素进行比较才能确定自己的位置；非比较排序则是通过确定某个元素之前应该有多少元素来唯一确定该元素的位置。比较排">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常见的排序算法">
 <meta property="og:url" content="http://rthero.club/常见的排序算法.html">
 <meta property="og:site_name" content="人天的技术博客">
-<meta property="og:description" content="分享带来进步">
+<meta property="og:description" content="综述 排序是将一组对象按照某种逻辑顺序重新排列的过程 排序算法的分类可以分为两类：一类是比较排序，包含冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等；一类是非比较排序，包含计数排序，基数排序，桶排序等。比较排序是指，排序元素之间的位置依赖于它们之间的比较，每个元素必须都与其他的元素进行比较才能确定自己的位置；非比较排序则是通过确定某个元素之前应该有多少元素来唯一确定该元素的位置。比较排">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-04T12:51:48.000Z">
+<meta property="og:image" content="http://rthero.club/常见的排序算法/排序算法总结.jpg">
+<meta property="og:image" content="http://rthero.club/常见的排序算法/冒泡排序.gif">
+<meta property="og:image" content="http://rthero.club/常见的排序算法/选择排序.gif">
+<meta property="og:updated_time" content="2019-07-03T10:21:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见的排序算法">
-<meta name="twitter:description" content="分享带来进步">
+<meta name="twitter:description" content="综述 排序是将一组对象按照某种逻辑顺序重新排列的过程 排序算法的分类可以分为两类：一类是比较排序，包含冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等；一类是非比较排序，包含计数排序，基数排序，桶排序等。比较排序是指，排序元素之间的位置依赖于它们之间的比较，每个元素必须都与其他的元素进行比较才能确定自己的位置；非比较排序则是通过确定某个元素之前应该有多少元素来唯一确定该元素的位置。比较排">
+<meta name="twitter:image" content="http://rthero.club/常见的排序算法/排序算法总结.jpg">
 
 
 
@@ -392,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  1.5k 字
                 </span>
               
 
@@ -408,7 +412,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -429,7 +433,115 @@
       
 
       
-        
+        <h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><ul>
+<li>排序是将一组对象按照某种逻辑顺序重新排列的过程</li>
+<li>排序算法的分类可以分为两类：一类是比较排序，包含冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等；一类是非比较排序，包含计数排序，基数排序，桶排序等。比较排序是指，排序元素之间的位置依赖于它们之间的比较，每个元素必须都与其他的元素进行比较才能确定自己的位置；非比较排序则是通过确定某个元素之前应该有多少元素来唯一确定该元素的位置。比较排序，时间复杂度 O (nlogn) ~ O (n^2)；非比较排序只要确定每个元素之前的已有的元素个数即可，所有一次遍历即可解决。算法时间复杂度可以达到 O(n)。比较排序的优势是，适用于各种规模的数据，也不在乎数据的分布，都能进行排序。可以说， 比较排序适用于一切需要排序的情况。非比较排序时间复杂度底，但由于非比较排序需要占用空间来确定唯一位置。所以对数据规模和数据分布有一定的要求。</li>
+<li>排序算法稳定性的定义：简单的说就是待排序表中若有两个相等的值，排序结束后它们彼此之间的<strong>相对</strong>位置是否会发生变化，若发生变化则称为不稳定，反之则为稳定。</li>
+<li>内／外 排序：所有排序操作都在内存中进行／由于数据量大，所以数据存放在磁盘中，而排序通过磁盘与内存中的数据传输才可以进行。</li>
+<li>算法总结</li>
+</ul>
+<img src="/常见的排序算法/排序算法总结.jpg" title="排序算法总结（图片来源于网络）">
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序是指，遍历所给的对象，依次比较前后两个元素，若顺序错误便交换两者，重复遍历（除上次遍历的最后一个元素）直到所有元素的顺序都符合要求才结束遍历。</p>
+<ul>
+<li>动态演示：<img src="/常见的排序算法/冒泡排序.gif" title="冒泡排序演示"></li>
+<li>代码实现：</li>
+</ul>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 冒泡排序</span></span><br><span class="line"><span class="comment"> * @author rentianHe</span></span><br><span class="line"><span class="comment"> *  */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">bubbleSort</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] <span class="title">bubbleSort</span>(<span class="params"><span class="keyword">int</span>[] arr</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr == <span class="literal">null</span> || arr.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> arr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                    swap(arr[j], arr[j + <span class="number">1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span>(<span class="params"><span class="keyword">int</span> i , <span class="keyword">int</span> j</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = i;</span><br><span class="line">        i = j;</span><br><span class="line">        j = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度: 最佳情况：O(n) 最差情况：O(n^2)   平均情况：O(n^2)  </li>
+<li>空间复杂度: O（1）</li>
+<li>是否稳定: 与写法有关，上面所给代码稳定</li>
+<li>改进思路： 鸡尾酒排序</li>
+</ul>
+<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>选择排序是指：在初始时，找到集合中最小（大）的元素，放到集合中起始位置作为已排序序列；然后再继续从未排列集合中找到最小（大）的元素，放在已排序序列的末尾，重复这个操作直到排序完成。</p>
+<ul>
+<li>动态演示： </li>
+</ul>
+<img src="/常见的排序算法/选择排序.gif" title="选择排序演示">
+<ul>
+<li>代码实现：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 选择排序</span></span><br><span class="line"><span class="comment"> * @author rentianHe</span></span><br><span class="line"><span class="comment"> *  </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">selectiveSort</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectiveSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (temp &lt; arr[j]) &#123;</span><br><span class="line">                    temp = arr[j];</span><br><span class="line">                    <span class="keyword">int</span> index = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(arr[i], arr[index]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = i;</span><br><span class="line">        i = j;</span><br><span class="line">        j = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度 无论何种情况都是O(n^2)</li>
+<li>空间复杂度 O(1)</li>
+<li>是否稳定 不稳定，不稳定发生在最小元素与 arr[i] 交换的时刻</li>
+</ul>
+<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><p>插入排序的工作原理是，集合第一个元素自动变为已排序元素，依次对未排序的元素，从后往前扫描已排序序列，找到合适的位置进行插入。</p>
+<ul>
+<li><p>动态演示</p>
+</li>
+<li><p>代码实现：</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 选择排序</span></span><br><span class="line"><span class="comment"> * @author rentianHe</span></span><br><span class="line"><span class="comment"> *  </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">insertionSort</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[j] &lt; arr[j - <span class="number">1</span>]) &#123;</span><br><span class="line">                    swap(arr[j], arr[j - <span class="number">1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;          </span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = i;</span><br><span class="line">        i = j;</span><br><span class="line">        j = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度 最佳情况：O(n)   最坏情况：O(n^2) 平均情况：O(n^2)</li>
+<li>空间复杂度 O(1)</li>
+<li><p>是否稳定 稳定</p>
+</li>
+<li><p>优化空间： 二分插入排序</p>
+</li>
+<li>总结：</li>
+</ul>
+<p>插入排序不适合数据量比较大的情况</p>
+<h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><ul>
+<li><p>动态演示： </p>
+</li>
+<li><p>代码实现：</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 希尔排序</span></span><br><span class="line"><span class="comment"> * @author rentianHe</span></span><br><span class="line"><span class="comment"> *  </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">shellSort</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (h &lt;= arr.length / <span class="number">3</span> - <span class="number">1</span>) &#123;</span><br><span class="line">            h = h * <span class="number">3</span> + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> gap = h; gap &gt; <span class="number">0</span>; gap = (gap - <span class="number">1</span>) / <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = gap; i &lt; arr.length; i++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt; gap - <span class="number">1</span>; j -= gap) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (arr[j] &lt; arr[j - gap]) &#123;</span><br><span class="line">                        swap(arr[j], arr[j - gap]);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = i;</span><br><span class="line">        i = j;</span><br><span class="line">        j = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：</li>
+<li>空间复杂度：</li>
+<li>是否稳定：</li>
+<li>优化空间：</li>
+<li>总结：</li>
+</ul>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><ul>
+<li><p>动态演示： </p>
+</li>
+<li><p>代码实现：</p>
+</li>
+</ul>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 归并排序</span><br><span class="line"> * </span><br><span class="line"> * @author rentianHe</span><br><span class="line"> * </span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> mergeSort &#123;</span><br><span class="line">    <span class="keyword">public</span> static <span class="built_in">int</span>[] mergeSort(<span class="built_in">int</span>[] arr) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            return arr;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">mid</span> = arr.length / <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">int</span>[] <span class="built_in">left</span> = Arrays.copyOfRange(arr, <span class="number">0</span>, <span class="built_in">mid</span>);</span><br><span class="line">        <span class="built_in">int</span>[] <span class="built_in">right</span> = Arrays.copyOfRange(arr, <span class="built_in">mid</span> + <span class="number">1</span>, arr.length);</span><br><span class="line"></span><br><span class="line">        return merge(mergeSort(<span class="built_in">left</span>), mergeSort(<span class="built_in">right</span>));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> static <span class="built_in">int</span>[] merge(<span class="built_in">int</span>[] <span class="built_in">left</span>, <span class="built_in">int</span>[] <span class="built_in">right</span>) &#123;</span><br><span class="line">        <span class="built_in">int</span>[] temp = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="built_in">left</span>.length + <span class="built_in">right</span>.length];</span><br><span class="line">        <span class="built_in">int</span> index = <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; <span class="built_in">left</span>.length &amp;&amp; j &lt; <span class="built_in">right</span>.length) &#123;</span><br><span class="line">            temp[index++] = <span class="built_in">left</span>[i] &gt;= <span class="built_in">right</span>[j] ? <span class="built_in">left</span>[i++] : <span class="built_in">right</span>[j++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; <span class="built_in">left</span>.length) &#123;</span><br><span class="line">            temp[index++] = <span class="built_in">left</span>[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(j &lt; <span class="built_in">right</span>.length) &#123;</span><br><span class="line">            temp[index++] = <span class="built_in">right</span>[j++]; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：</li>
+<li>空间复杂度：</li>
+<li>是否稳定：</li>
+<li>优化空间：</li>
+<li>总结：</li>
+</ul>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><ul>
+<li><p>动态演示： </p>
+</li>
+<li><p>代码实现：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：</li>
+<li>空间复杂度：</li>
+<li>是否稳定：</li>
+<li>优化空间：</li>
+<li>总结：</li>
+</ul>
+<h1 id="希尔排序-1"><a href="#希尔排序-1" class="headerlink" title="希尔排序"></a>希尔排序</h1><ul>
+<li><p>动态演示： </p>
+</li>
+<li><p>代码实现：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：</li>
+<li>空间复杂度：</li>
+<li>是否稳定：</li>
+<li>优化空间：</li>
+<li>总结：</li>
+</ul>
+
       
     </div>
     
@@ -449,7 +561,7 @@
   <p><span>本文标题:</span><a href="/常见的排序算法.html">常见的排序算法</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Rentian He 的个人博客">Rentian He</a></p>
   <p><span>发布时间:</span>2019年05月04日 - 20:05</p>
-  <p><span>最后更新:</span>2019年05月04日 - 20:05</p>
+  <p><span>最后更新:</span>2019年07月03日 - 18:07</p>
   <p><span>原始链接:</span><a href="/常见的排序算法.html" title="常见的排序算法">http://rthero.club/常见的排序算法.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rthero.club/常见的排序算法.html" aria-label="复制成功！"></i></span>
   </p>
@@ -557,8 +669,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -575,7 +696,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -642,6 +763,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#综述"><span class="nav-number">1.</span> <span class="nav-text">综述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-number">2.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择排序"><span class="nav-number">3.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入排序"><span class="nav-number">4.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#希尔排序"><span class="nav-number">5.</span> <span class="nav-text">希尔排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序"><span class="nav-number">6.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-number">7.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#希尔排序-1"><span class="nav-number">8.</span> <span class="nav-text">希尔排序</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
